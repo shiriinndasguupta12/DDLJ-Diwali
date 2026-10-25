@@ -74,6 +74,7 @@ input[type=text]:focus{outline:none;border-color:var(--mint)}
 .btn{display:block;width:100%;margin-top:1.6rem;text-align:center;text-decoration:none;font:inherit;font-weight:600;font-size:1.05rem;color:#06281d;background:var(--mint);border-radius:1rem;padding:1rem;cursor:pointer;box-shadow:0 8px 24px rgba(127,240,201,.25)}
 .btn[aria-disabled=true]{background:var(--panel);color:var(--muted);box-shadow:none;border:1.5px dashed var(--line);cursor:not-allowed}
 .hint{text-align:center;font-size:.82rem;color:var(--muted);margin:.6rem 0 0;min-height:1.2em}
+.back{text-align:center;font-size:.9rem;font-weight:500;color:var(--mint);background:var(--panel);border:1px dashed var(--mint-deep);border-radius:.9rem;padding:.75rem 1rem;margin:1rem 0 0}
 a:focus-visible,.btn:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
 
 /* card */
@@ -122,7 +123,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;margin-top:2.5rem}
     <li><span class="k">When</span><span class="v">Saturday, 31st Oct<small>7 pm onwards</small></span></li>
     <li><span class="k">Where</span><span class="v">C5A 299 B, Janakpuri</span></li>
     <li><span class="k">Dress code</span><span class="v">Traditional is mandatory<small>Look your chatpata besttt</small></span></li>
-    <li><span class="k">Drinks</span><span class="v">BYOB<small>Bring your own booze</small></span></li>
+    <li><span class="k">Drinks</span><span class="v">BYOB<small>Bring your own booze and don’t forget your dancing shoes</small></span></li>
   </ul>
 
   <h2>RSVP</h2>
@@ -143,13 +144,13 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;margin-top:2.5rem}
     <label><input type="radio" name="role" value="DJ"><span>DJ</span></label>
     <label><input type="radio" name="role" value="Decor"><span>Decor</span></label>
     <label><input type="radio" name="role" value="Bartender"><span>Bartender</span></label>
-    <label><input type="radio" name="role" value="Game master"><span>Game master</span></label>
     <label><input type="radio" name="role" value="Paparazzi"><span>Paparazzi</span></label>
-    <label><input type="radio" name="role" value="Just here to vibe"><span>Just here to vibe</span></label>
+    <label><input type="radio" name="role" value="Just here for the vatavaran"><span>Just here for the vatavaran</span></label>
   </fieldset>
 
   <a class="btn" id="rsvp" aria-disabled="true" role="button" target="_blank" rel="noopener">RSVP on WhatsApp</a>
   <p class="hint" id="hint">Add your name and tap an answer to unlock.</p>
+  <p class="back">After you send it on WhatsApp, come back to this page in your browser to check out your party card 🎉</p>
 
   <section id="card" hidden aria-live="polite">
     <div class="pass">
@@ -208,7 +209,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;margin-top:2.5rem}
   document.querySelectorAll('input[type=radio]').forEach(function(r){r.addEventListener('change',update)});
   update();
 
-  var EMOJI = {'DJ':'🎧','Decor':'🪔','Bartender':'🍹','Game master':'🎲','Paparazzi':'📸','Just here to vibe':'✨'};
+  var EMOJI = {'DJ':'🎧','Decor':'🪔','Bartender':'🍹','Paparazzi':'📸','Just here for the vatavaran':'✨'};
   btn.addEventListener('click',function(e){
     if(btn.getAttribute('aria-disabled')==='true'){ e.preventDefault(); return; }
     var name = nameEl.value.trim(), coming = val('coming'), role = notComing() ? '' : val('role');
