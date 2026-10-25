@@ -193,7 +193,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;margin-top:2.5rem}
     if(notComing()){ document.querySelectorAll('input[name=role]').forEach(function(r){r.checked=false}); }
     var role = notComing() ? '' : val('role');
     if(name && coming){
-      var tags = {'Pakka':' [<3]','Shayad':' [50-50]','Iss baar not possible':' [:(]'};
+      var tags = {'Pakka':' <3','Shayad':' 50-50','Iss baar not possible':' :('};
       var msg = 'Helluuu! Diwali party RSVP ✨\nName: '+name+'\nComing: '+coming+(tags[coming]||'')+(role?'\nParty role: '+role:'');
       btn.href = 'https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg);
       btn.setAttribute('aria-disabled','false');
